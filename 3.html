@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste & Tell Bistro - Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link  href=C:\Users\Admin\Desktop\Project\3.css rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="menuApp" ng-controller="MenuController" ng-controller="FoodOrderController" ng-controller="ReservationController">
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Taste & Tell Bistro </h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#menu" onclick="showSection('menu')">Menu</a>
+        <a href="#reservation" onclick="showSection('reservation')">Reservation</a>
+        <a href="#order" onclick="showSection('order')">Order</a>
+        <a href="#login" onclick="showSection('login')">Login</a>
+        <a href="#about" onclick="showSection('about')">About Us</a>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home" class="section">
+        <div class="restaurant-img">
+            <img src="res_img.jpeg" alt="Restaurant Image">
+        </div>
+
+        <div class="about-section">
+            <p>We offer the best gourmet experience, mixing tradition with innovation in our dishes. 
+                At our restaurant, we focus on creating unforgettable memories for every guest. 
+                Our chefs are dedicated to using only the freshest ingredients, ensuring each dish is a perfect balance of flavor and artistry.
+                Whether you're here for a casual meal or a special celebration, we strive to make every visit extraordinary.</p>
+        </div>
+
+        <div class="review-section">
+            <div class="review-box">
+                <h3>Gourmet Times</h3>
+                <p>"An exceptional culinary experience that redefines fine dining!"</p>
+            </div>
+            <div class="review-box">
+                <h3>Foodie Magazine</h3>
+                <p>"The perfect blend of flavors and creativity on every plate."</p>
+            </div>
+            <div class="review-box">
+                <h3>Dine Out Weekly</h3>
+                <p>"The ambiance is warm, and the food is simply delicious!"</p>
+            </div>
+            <div class="review-box">
+                <h3>Epicurean Journal</h3>
+                <p>"A must-visit for those who appreciate great food and service."</p>
+            </div>
+            <div class="review-box">
+                <h3>Culinary Critics</h3>
+                <p>"A delightful journey for the taste buds, with exquisite presentation."</p>
+            </div>
+        </div>
+
+        <div class="visit-us">
+            <p>We can't wait to serve you soon!</p>
+            <p>Visit us for an unforgettable dining experience.</p>
+        </div>
+    </div>
+
+    
+    <!-- Menu Section -->
+    <div id="menu" class="section" style="display: none;" >
+        <div class="menu-heading">
+            <h2>Our Menu</h2>
+            <p>(Click on the food item to add to order)</p>
+        </div>
+        <div class="menu-tables">   
+            <table>
+                <tr>
+                    <th colspan="2">Drinks</th>
+                </tr>
+                <tr ng-click="addToOrder('Coke', 60)">
+                    <td class="menu-item">Coke</td>
+                    <td class="price">60/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Sprite', 60)">
+                    <td class="menu-item">Sprite</td>
+                    <td class="price">60/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Pepsi', 60)">
+                    <td class="menu-item">Pepsi</td>
+                    <td class="price">60/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Orange Juice', 80)">
+                    <td class="menu-item">Orange Juice</td>
+                    <td class="price">80/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Lemonade', 70)">
+                    <td class="menu-item">Lemonade</td>
+                    <td class="price">70/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Iced Tea', 75)">
+                    <td class="menu-item">Iced Tea</td>
+                    <td class="price">75/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Milkshake', 100)">
+                    <td class="menu-item">Milkshake</td>
+                    <td class="price">100/-</td>
+                </tr>    
+            </table> 
+            <table>
+                <tr>
+                <th colspan="2">Starters</th>
+                </tr>
+                <tr ng-click="addToOrder('French Fries', 50)">
+                <td class="menu-item">French Fries</td>
+                <td class="price">50/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Onion Rings', 60)">
+                <td class="menu-item">Onion Rings</td>
+                <td class="price">60/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Garlic Bread', 40)">
+                <td class="menu-item">Garlic Bread</td>
+                <td class="price">40/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Mozzarella Sticks', 80)">
+                <td class="menu-item">Mozzarella Sticks</td>
+                <td class="price">80/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Chicken Nuggets', 100)">
+                <td class="menu-item">Chicken Nuggets</td>
+                <td class="price">100/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Jalapeno Poppers', 70)">
+                <td class="menu-item">Jalapeno Poppers</td>
+                <td class="price">70/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Salad', 80)">
+                <td class="menu-item">Salad</td>
+                <td class="price">80/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Soup', 70)">
+                <td class="menu-item">Soup</td>
+                <td class="price">70/-</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                <th colspan="2">Sandwiches</th>
+                </tr>
+                <tr ng-click="addToOrder('Club Sandwich', 150)">
+                <td class="menu-item">Club Sandwich</td>
+                <td class="price">150/-</td>
+                </tr>
+                <tr ng-click="addToOrder('BLT Sandwich', 120)">
+                <td class="menu-item">BLT Sandwich</td>
+                <td class="price">120/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Grilled Cheese Sandwich', 80)">
+                <td class="menu-item">Grilled Cheese Sandwich</td>
+                <td class="price">80/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Tuna Sandwich', 130)">
+                <td class="menu-item">Tuna Sandwich</td>
+                <td class="price">130/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Chicken Salad Sandwich', 140)">
+                <td class="menu-item">Chicken Salad Sandwich</td>
+                <td class="price">140/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Egg Salad Sandwich', 100)">
+                <td class="menu-item">Egg Salad Sandwich</td>
+                <td class="price">100/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Turkey Sandwich', 130)">
+                <td class="menu-item">Turkey Sandwich</td>
+                <td class="price">130/-</td>
+                </tr>
+            </table>   
+            <table>
+                <tr>
+                <th colspan="2">Pizza & Pasta</th>
+                </tr>
+                <tr ng-click="addToOrder('Margherita Pizza', 250)">
+                <td class="menu-item">Margherita Pizza</td>
+                <td class="price">250/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Pepperoni Pizza', 300)">
+                <td class="menu-item">Pepperoni Pizza</td>
+                <td class="price">300/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Vegetarian Pizza', 280)">
+                <td class="menu-item">Vegetarian Pizza</td>
+                <td class="price">280/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Hawaiian Pizza', 320)">
+                <td class="menu-item">Hawaiian Pizza</td>
+                <td class="price">320/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Spaghetti Bolognese', 200)">
+                <td class="menu-item">Spaghetti Bolognese</td>
+                <td class="price">200/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Carbonara Pasta', 180)">
+                <td class="menu-item">Carbonara Pasta</td>
+                <td class="price">180/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Alfredo Pasta', 170)">
+                <td class="menu-item">Alfredo Pasta</td>
+                <td class="price">170/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Pesto Pasta', 190)">
+                <td class="menu-item">Pesto Pasta</td>
+                <td class="price">190/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Lasagna', 250)">
+                <td class="menu-item">Lasagna</td>
+                <td class="price">250/-</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th colspan="2">Tacos & Nachos</th>
+                </tr>
+                <tr ng-click="addToOrder('Chicken Taco', 120)">
+                    <td class="menu-item">Chicken Taco</td>
+                    <td class="price">120/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Beef Taco', 140)">
+                    <td class="menu-item">Beef Taco</td>
+                    <td class="price">140/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Veggie Taco', 100)">
+                    <td class="menu-item">Veggie Taco</td>
+                    <td class="price">100/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Cheesy Nachos', 150)">
+                    <td class="menu-item">Cheesy Nachos</td>
+                    <td class="price">150/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Spicy Nachos', 170)">
+                    <td class="menu-item">Spicy Nachos</td>
+                    <td class="price">170/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Loaded Nachos', 200)">
+                    <td class="menu-item">Loaded Nachos</td>
+                    <td class="price">200/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Fish Taco', 160)">
+                    <td class="menu-item">Fish Taco</td>
+                    <td class="price">160/-</td>
+                </tr>
+            </table>        
+            <table>
+                <tr>
+                <th colspan="2">Desserts</th>
+                </tr>
+                <tr ng-click="addToOrder('Chocolate Brownie', 80)">
+                <td class="menu-item">Chocolate Brownie</td>
+                <td class="price">80/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Apple Pie', 100)">
+                <td class="menu-item">Apple Pie</td>
+                <td class="price">100/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Cheesecake', 120)">
+                <td class="menu-item">Cheesecake</td>
+                <td class="price">120/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Ice Cream Sundae', 150)">
+                <td class="menu-item">Ice Cream Sundae</td>
+                <td class="price">150/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Fruit Salad', 80)">
+                <td class="menu-item">Fruit Salad</td>
+                <td class="price">80/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Tiramisu', 130)">
+                <td class="menu-item">Tiramisu</td>
+                <td class="price">130/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Crème Brûlée', 100)">
+                <td class="menu-item">Crème Brûlée</td>
+                <td class="price">100/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Pancakes', 120)">
+                <td class="menu-item">Pancakes</td>
+                <td class="price">120/-</td>
+                </tr>
+                <tr ng-click="addToOrder('Waffles', 140)">
+                <td class="menu-item">Waffles</td>
+                <td class="price">140/-</td>
+                </tr>
+            </table>
+        </div> 
+            <div class="food-gallery-container">
+                <h2 class="gallery-heading">Food Image Gallery</h2>
+                <div class="food-gallery">
+                    <img src="food1.jpg" alt="Food Item 1">
+                    <img src="food2.jpg" alt="Food Item 2">
+                    <img src="food3.jpg" alt="Food Item 3">
+                    <img src="food4.jpg" alt="Food Item 4">
+                    <img src="food5.jpg" alt="Food Item 5">
+                    <img src="food6.jpg" alt="Food Item 6">
+                    <img src="food7.jpg" alt="Food Item 7">
+                    <img src="food8.jpg" alt="Food Item 8">
+                    <img src="food9.jpg" alt="Food Item 9">
+                    <img src="food10.jpg" alt="Food Item 10">
+                </div>
+            </div>
+            <div id="order-summary">
+                <h2>Your Order</h2>
+                <ul>
+                    <li ng-repeat="item in order">
+                        {{item.name}} - {{item.price}}/- (Qty: {{item.quantity}})
+                        <span ng-click="removeItem($index)">Remove</span>
+                    </li>
+                </ul>
+                <p ng-if="order.length === 0">No items in the order.</p>
+                <p><strong>Total: </strong>{{getTotal()}}/-</p>
+            </div>  
+            <a href="#reservation" class="reservation-button" onclick="showSection('reservation')">
+            Make a Reservation</a>
+    </div>
+    
+
+    <!-- Reservation Section -->
+    <div id="reservation" class="section" style="display: none;" >
+        <div class="reservationform-container">
+            <form name="reservationForm" ng-submit="submitReservation(reservationForm.$valid)" novalidate>
+                
+                <!-- Name Field -->
+                <label class="reservationform-label" for="name">Name:</label>
+                <input class="reservationform-input" type="text" id="name" name="name" ng-model="reservation.name" ng-required="true">
+                <span class="error" ng-show="reservationForm.name.$touched && reservationForm.name.$invalid">Name is required.</span>
+                
+                <!-- Phone Number Field -->
+                <label class="reservationform-label" for="phone">Phone Number:</label>
+                <input class="reservationform-input" type="tel" id="phone" name="phone" ng-model="reservation.phone" ng-required="true" ng-pattern="/^\d{10}$/">
+                <span class="error" ng-show="reservationForm.phone.$touched && reservationForm.phone.$invalid">Enter a valid 10-digit phone number.</span>
+            
+                <!-- Date Field -->
+                <label class="reservationform-label" for="date">Date:</label>
+                <input class="reservationform-input" type="date" id="date" name="date" ng-model="reservation.date" ng-required="true">
+                <span class="error" ng-show="reservationForm.date.$touched && reservationForm.date.$invalid">Date is required.</span>
+            
+                <!-- Time Field -->
+                <label class="reservationform-label" for="time">Time:</label>
+                <input class="reservationform-input" type="time" id="time" name="time" ng-model="reservation.time" ng-required="true">
+                <span class="error" ng-show="reservationForm.time.$touched && reservationForm.time.$invalid">Time is required.</span>
+            
+                <!-- Number of Guests -->
+                <label class="reservationform-label" for="guests">Table for: </label>
+                <input class="reservationform-input" type="number" id="guests" name="guests" ng-model="reservation.guests" ng-required="true">
+                <span class="error" ng-show="reservationForm.guests.$touched && reservationForm.guests.$invalid">Number of guests is required.</span>
+    
+                <!-- Banquet Hall Option -->
+                <label>
+                    <span class="reservationform-label">Do you want to reserve the banquet hall?</span>
+                    <input type="checkbox" ng-model="reservation.banquetHall">
+                </label>
+                <div class="banquet-details" ng-show="reservation.banquetHall">
+                    <!-- Number of Guests for Banquet -->
+                    <label class="reservationform-label" for="banquetGuests">Number of Guests in Banquet Hall:</label>
+                    <input class="reservationform-input" type="number" id="banquetGuests" name="banquetGuests" ng-model="reservation.banquetGuests" ng-required="reservation.banquetHall">
+                    <span class="error" ng-show="reservationForm.banquetGuests.$touched && reservationForm.banquetGuests.$invalid">Number of guests for banquet is required.</span>
+                    
+                    <!-- Event Type -->
+                    <label class="reservationform-label" for="eventType">Type of Event:</label>
+                    <input class="reservationform-input" type="text" id="eventType" name="eventType" ng-model="reservation.eventType" ng-required="reservation.banquetHall">
+                    <span class="error" ng-show="reservationForm.eventType.$touched && reservationForm.eventType.$invalid">Event type is required.</span>
+                </div>
+    
+                <!-- Pre-order Food -->
+                <label>
+                    <span class="reservationform-label">Do you wish to pre-order food?</span>
+                    <input type="checkbox" ng-model="reservation.preOrder">
+                </label>
+            
+                <div class="reservationform-order" ng-show="reservation.preOrder">
+                    <div id="order-summary">
+                        <h2>Your Order</h2>
+                        <ul>
+                            <li ng-repeat="item in order">
+                                {{item.name}} - {{item.price}}/- (Qty: {{item.quantity}})
+                                <span ng-click="removeItem($index)">Remove</span>
+                            </li>
+                        </ul>
+                        <p ng-if="order.length === 0">No items in the order.</p>
+                        <p><strong>Total: </strong>{{getTotal()}}/-</p>
+                    </div>
+                </div><br>
+                
+                <!-- Submit Button -->
+                <button class="reservationform-button" type="submit">Reserve Table</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Section -->
+    <div id="order" class="section" style="display: none;" >
+        <div class="foodorder-container">
+            <form name="foodOrderForm" ng-submit="submitOrder(foodOrderForm.$valid)" novalidate>
+                <!-- Name, Phone, and Email -->
+                <label class="foodorder-label" for="name">Name:</label>
+                <input class="foodorder-input" type="text" id="name" name="name" ng-model="orderDetails.name" ng-required="true">
+                <span class="error" ng-show="foodOrderForm.name.$touched && foodOrderForm.name.$invalid">Name is required.</span>
+    
+                <label class="foodorder-label" for="phone">Phone Number:</label>
+                <input class="foodorder-input" type="tel" id="phone" name="phone" ng-model="orderDetails.phone" ng-required="true" ng-pattern="/^\d{10}$/">
+                <span class="error" ng-show="foodOrderForm.phone.$touched && foodOrderForm.phone.$invalid">Enter a valid 10-digit phone number.</span>
+    
+                <label class="foodorder-label" for="email">Email:</label>
+                <input class="foodorder-input" type="email" id="email" name="email" ng-model="orderDetails.email" ng-required="true">
+                <span class="error" ng-show="foodOrderForm.email.$touched && foodOrderForm.email.$invalid">Enter a valid email.</span>
+    
+                <!-- Delivery or Pickup Option (Radio Buttons) -->
+                <label class="foodorder-label">Delivery or Pickup:</label>
+                <input type="radio" id="delivery" name="orderType" ng-model="orderDetails.orderType" value="delivery" ng-required="true"> Home Delivery
+                <input type="radio" id="pickup" name="orderType" ng-model="orderDetails.orderType" value="pickup" ng-required="true"> Pickup<br><br>
+                <span class="error" ng-show="foodOrderForm.$submitted && !orderDetails.orderType">Select delivery or pickup.</span>
+    
+                <!-- Home Delivery Section -->
+                <div ng-show="orderDetails.orderType == 'delivery'">
+                    <label class="foodorder-label" for="savedAddress">Use Saved Address:</label>
+                    <input type="radio" ng-model="orderDetails.addressType" value="saved"> Saved Address
+                    <input type="radio" ng-model="orderDetails.addressType" value="new"> Add New Address<br><br>
+    
+                    <!-- Show address fields if adding a new address -->
+                    <div ng-show="orderDetails.addressType == 'new'">
+                        <label class="foodorder-label" for="address">Address:</label>
+                        <input class="foodorder-input" type="text" id="address" name="address" ng-model="orderDetails.address" ng-required="orderDetails.addressType == 'new'">
+                        <span class="error" ng-show="foodOrderForm.address.$touched && foodOrderForm.address.$invalid">Address is required.</span>
+    
+                        <label class="foodorder-label" for="city">City:</label>
+                        <input class="foodorder-input" type="text" id="city" name="city" ng-model="orderDetails.city" ng-required="orderDetails.addressType == 'new'">
+                        <span class="error" ng-show="foodOrderForm.city.$touched && foodOrderForm.city.$invalid">City is required.</span>
+                    </div>
+                </div>
+    
+                <!-- Pickup Section -->
+                <div ng-show="orderDetails.orderType == 'pickup'">
+                    <label class="foodorder-label" for="pickupTime">Pickup Time:</label>
+                    <input class="foodorder-input" type="time" id="pickupTime" name="pickupTime" ng-model="orderDetails.pickupTime" ng-required="orderDetails.orderType == 'pickup'"><br>
+                    <span class="error" ng-show="foodOrderForm.pickupTime.$touched && foodOrderForm.pickupTime.$invalid">Pickup time is required.</span>
+                </div>
+    
+                <!-- Payment Information -->
+                <div class="payment-info">
+                    <label class="foodorder-label" for="paymentMethod">Payment Method:</label>
+                    <select class="foodorder-input" id="paymentMethod" name="paymentMethod" ng-model="orderDetails.paymentMethod" ng-required="true">
+                        <option value="credit">Credit/Debit Card</option>
+                        <option value="online">Online Payment</option>
+                        <option value="cash">Cash on Delivery/Pickup</option>
+                    </select><br>
+                    <span class="error" ng-show="foodOrderForm.paymentMethod.$touched && foodOrderForm.paymentMethod.$invalid">Payment method is required.</span>
+    
+                    <div ng-show="orderDetails.paymentMethod == 'credit'">
+                        <label class="foodorder-label" for="cardNumber">Card Number:</label>
+                        <input class="foodorder-input" type="text" id="cardNumber" name="cardNumber" ng-model="orderDetails.cardNumber" ng-required="true" ng-pattern="/^\d{16}$/">
+                        <span class="error" ng-show="foodOrderForm.cardNumber.$touched && foodOrderForm.cardNumber.$invalid">Enter a valid 16-digit card number.</span>
+    
+                        <label class="foodorder-label" for="expiryDate">Expiry Date:</label>
+                        <input class="foodorder-input" type="month" id="expiryDate" name="expiryDate" ng-model="orderDetails.expiryDate" ng-required="true">
+                        <span class="error" ng-show="foodOrderForm.expiryDate.$touched && foodOrderForm.expiryDate.$invalid">Expiry date is required.</span>
+    
+                        <label class="foodorder-label" for="cvv">CVV:</label>
+                        <input class="foodorder-input" type="text" id="cvv" name="cvv" ng-model="orderDetails.cvv" ng-required="true" maxlength="3" ng-pattern="/^\d{3}$/">
+                        <span class="error" ng-show="foodOrderForm.cvv.$touched && foodOrderForm.cvv.$invalid">Enter a valid 3-digit CVV.</span>
+                    </div>
+    
+                    <div ng-show="orderDetails.paymentMethod == 'online'">
+                        <label class="foodorder-label" for="upiId">UPI ID:</label>
+                        <input class="foodorder-input" type="text" id="upiId" name="upiId" ng-model="orderDetails.upiId" ng-required="orderDetails.paymentMethod == 'online'">
+                        <span class="error" ng-show="foodOrderForm.upiId.$touched && foodOrderForm.upiId.$invalid">UPI ID is required.</span>
+                    </div>
+                </div>
+    
+                <div class="submit-section">
+                    <button class="foodorder-button" type="submit">Submit Order</button>
+                </div>
+            </form>
+        </div>
+    
+        <!-- Order Summary -->
+        <div id="order-summary">
+            <h2>Your Order</h2>
+            <ul>
+                <li ng-repeat="item in order">
+                    {{item.name}} - {{item.price}}/- (Qty: {{item.quantity}})
+                    <span ng-click="removeItem($index)">Remove</span>
+                </li>
+            </ul>
+            <p ng-if="order.length === 0">No items in the order.</p>
+            <p><strong>Total: </strong>{{getTotal()}}/-</p>
+        </div>
+        <a href="#menu" class="showmenu-button" onclick="showSection('menu')">
+            Show Menu</a>
+    </div>
+
+
+    <!-- Login Section -->
+    <div id="login" class="section" style="display: none;">
+        <div class="login-form" id="login-form">
+            <h2>Login</h2>
+            <form name="loginForm" novalidate>
+                <!-- Login form fields -->
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required>
+    
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+    
+                <input type="submit" value="Login">
+            </form>
+            <span class="toggle-link" id="signup-link">Don't have an account? Sign up now</span>
+        </div>
+        <div class="registration-form" style="display: none;">
+            <h2>Customer Registration</h2>
+            <form name="registrationForm" novalidate>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" ng-model="formData.name" required>
+                <span ng-show="registrationForm.name.$dirty && registrationForm.name.$invalid" class="error-msg">Name is required.</span>
+    
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" ng-model="formData.email" required>
+                <span ng-show="registrationForm.email.$dirty && registrationForm.email.$invalid" class="error-msg">Enter a valid email.</span>
+    
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" ng-model="formData.phone" ng-pattern="/^\d{10}$/" required>
+                <span ng-show="registrationForm.phone.$dirty && registrationForm.phone.$invalid" class="error-msg">Enter a valid 10-digit phone number.</span>
+    
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" ng-model="formData.dob" required>
+                <span ng-show="registrationForm.dob.$dirty && registrationForm.dob.$invalid" class="error-msg">Date of birth is required.</span>
+    
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" ng-model="formData.address" required>
+                <span ng-show="registrationForm.address.$dirty && registrationForm.address.$invalid" class="error-msg">Address is required.</span>
+    
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" ng-model="formData.city" required>
+                <span ng-show="registrationForm.city.$dirty && registrationForm.city.$invalid" class="error-msg">City is required.</span>
+    
+                <label for="state">State/Province:</label>
+                <input type="text" id="state" name="state" ng-model="formData.state" required>
+                <span ng-show="registrationForm.state.$dirty && registrationForm.state.$invalid" class="error-msg">State/Province is required.</span>
+    
+                <label for="zip">Postal Code:</label>
+                <input type="text" id="zip" name="zip" ng-model="formData.zip" ng-pattern="/^\d{5}$/" required>
+                <span ng-show="registrationForm.zip.$dirty && registrationForm.zip.$invalid" class="error-msg">Enter a valid 5-digit postal code.</span>
+    
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" ng-model="formData.gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <span ng-show="registrationForm.gender.$dirty && registrationForm.gender.$invalid" class="error-msg">Gender is required.</span>
+    
+                <label for="fav-food">Favorite Food:</label>
+                <input type="text" id="fav-food" name="fav-food" ng-model="formData.favFood">
+    
+                <label for="how-did-you-find">How did you find out about us?</label>
+                <select id="how-did-you-find" name="how-did-you-find" ng-model="formData.howDidYouFind" required>
+                    <option value="">Select</option>
+                    <option value="social-media">Social Media</option>
+                    <option value="friend-family">Friend/Family</option>
+                    <option value="online-ad">Online Advertisement</option>
+                    <option value="newspaper-magazine">Newspaper/Magazine</option>
+                    <option value="other">Other</option>
+                </select>
+                <span ng-show="registrationForm.howDidYouFind.$dirty && registrationForm.howDidYouFind.$invalid" class="error-msg">This field is required.</span>
+    
+                <label for="loyalty-program">Subscribe to Loyalty Program:</label>
+                <input type="checkbox" id="loyalty-program" name="loyalty-program" ng-click="toggleLoyaltyDetails()"><br>
+    
+                <div id="loyalty-details" ng-show="showLoyaltyDetails">
+                    <p>Our loyalty program offers exclusive benefits and rewards...</p>
+    
+                    <label for="preferred-contact">Preferred Contact Method:</label>
+                    <select id="preferred-contact" name="preferred-contact" ng-model="formData.preferredContact">
+                        <option value="">Select contact method</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="sms">SMS</option>
+                    </select>
+    
+                    <label for="birthday-month">Birthday Month:</label>
+                    <select id="birthday-month" name="birthday-month" ng-model="formData.birthdayMonth">
+                        <option value="">Select birthday month</option>
+                        <option value="january">January</option>
+                        <option value="february">February</option>
+                        <option value="march">March</option>
+                    </select>
+    
+                    <label for="membership-tier">Membership Tier:</label>
+                    <select id="membership-tier" name="membership-tier" ng-model="formData.membershipTier">
+                        <option value="">Select membership tier</option>
+                        <option value="basic">Basic - 200/year</option>
+                        <option value="silver">Silver - 500/year</option>
+                        <option value="gold">Gold - 1000/year</option>
+                    </select>
+    
+                    <label for="payment-options">Preferred Payment Option:</label>
+                    <select id="payment-options" name="payment-options" ng-model="formData.paymentOptions">
+                        <option value="">Select payment option</option>
+                        <option value="credit-card">Credit/Debit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="cash">Cash</option>
+                    </select>
+                </div>
+    
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" ng-model="formData.password" required>
+                <span ng-show="registrationForm.password.$dirty && registrationForm.password.$invalid" class="error-msg">Password is required.</span>
+    
+                <!-- Confirm Password -->
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" ng-model="formData.confirmPassword" required>
+                <span ng-show="registrationForm.confirmPassword.$dirty && !matchPassword()" class="error-msg">Passwords do not match.</span>
+    
+                <!-- Submit Button -->
+                <input type="submit" value="Register" ng-disabled="registrationForm.$invalid">
+            </form>
+                <span class="toggle-link" id="login-link">Already have an account? Log in now</span>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about" class="section" style="display: none;">
+        <div class="about-us">
+            <div class="about-us-box">
+                <h2 class="about-us-heading">Welcome to Taste & Tell Bistro</h2>
+                <p>At Taste & Tell Bistro, we believe that dining is more than just a meal—it's an experience to be 
+                    cherished. Nestled in the heart of India, our restaurant is a celebration of gourmet 
+                    excellence and heartfelt hospitality.</p>
+            </div>
+    
+            <div class="about-us-box">
+                <h3 class="about-us-heading">Our Story</h3>
+                <p>Founded in [Year], Taste & Tell Bistro was born out of a passion for culinary artistry and a commitment to 
+                    exceptional service. Our founders,envisioned a place where every dish 
+                    tells a story and every guest feels like royalty.From our humble beginnings, we've grown into a 
+                    beloved local gem known for our exquisite menu and elegant ambiance. Each ingredient is carefully 
+                    selected, and every dish is crafted with love and precision to deliver a dining experience that's 
+                    both memorable and luxurious.</p>
+            </div>
+    
+            <div class="about-us-box">
+                <h3 class="about-us-heading">Our Philosophy</h3>
+                <p>We believe in using the finest ingredients and innovative cooking techniques to create dishes 
+                    that are as delightful to the eye as they are to the palate. Our team of skilled chefs and 
+                    attentive staff work tirelessly to ensure that every visit is a special occasion.Our 
+                    commitment to sustainability and community is at the heart of everything we do. 
+                    We source our ingredients from local farmers and purveyors who share our dedication 
+                    to quality and ethical practices.</p>
+            </div>
+    
+            <div class="about-us-box">
+                <h3 class="about-us-heading">Our Menu</h3>
+                <p>From tantalizing appetizers to decadent desserts, our menu features a diverse selection of 
+                    gourmet dishes inspired by both classic and contemporary flavors. Whether you're joining us 
+                    for a romantic dinner, a family celebration, or a casual lunch, you'll find something to satisfy 
+                    every craving.</p>
+            </div>   
+    
+            <div class="about-us-box">
+                <h3 class="about-us-heading">Join Us</h3>
+                <p>We invite you to experience the warmth and elegance of Taste & Tell Bistro. Whether you're a 
+                    first-time guest or a loyal patron, we look forward to welcoming you and sharing our love for 
+                    exceptional food and service.</p>
+            </div>
+    
+            <div class="about-us-visit">
+                <p>Thank you for choosing Taste & Tell Bistro. We can't wait to serve you!</p>
+            </div>
+    
+            <div class="about-us-contact">
+                <h4 class="about-us-heading">Contact Us</h4>
+                <p><strong>Phone:</strong> 00000-00000</p>
+                <p><strong>Address:</strong> xyz street </p>
+                <p><strong>Instagram:</strong>@tasteandtellbistro</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Taste & Tell Bistro. All Rights Reserved.</p>
+    </div>
+
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+        }
+
+        // Show the home section by default
+        showSection('home');
+    </script>
+    <script>
+        // JavaScript to toggle between forms
+        document.getElementById('signup-link').addEventListener('click', function() {
+            document.querySelector('.login-form').style.display = 'none'; // Hide login form
+            document.querySelector('.registration-form').style.display = 'block'; // Show registration form
+        });
+
+        document.getElementById('login-link').addEventListener('click', function() {
+            document.querySelector('.registration-form').style.display = 'none'; // Hide registration form
+            document.querySelector('.login-form').style.display = 'block'; // Show login form
+        });
+    </script>
+    <script>
+        var app = angular.module('menuApp', []);
+    
+        app.controller('MenuController', function($scope) {
+            $scope.order = [];
+
+$scope.addToOrder = function(itemName, itemPrice) {
+    // Check if the item is already in the order
+    var existingItem = $scope.order.find(item => item.name === itemName);
+    
+    if (existingItem) {
+        // If the item exists, increase the quantity
+        existingItem.quantity++;
+    } else {
+        // If the item is new, add it to the order
+        $scope.order.push({ name: itemName, price: itemPrice, quantity: 1 });
+    }
+};
+
+$scope.removeItem = function(index) {
+    $scope.order.splice(index, 1);
+};
+
+$scope.getTotal = function() {
+    return $scope.order.reduce(function(total, item) {
+        return total + (item.price * item.quantity);
+    }, 0);
+};
+
+        });
+    </script>
+    <script>
+        angular.module('restaurantApp', [])
+        .controller('FormController', ['$scope', function($scope) {
+            $scope.showLoyaltyDetails = false;
+            $scope.formData = {};
+
+            $scope.toggleLoyaltyDetails = function() {
+                $scope.showLoyaltyDetails = !$scope.showLoyaltyDetails;
+            };
+
+            $scope.matchPassword = function() {
+                return $scope.formData.password === $scope.formData.confirmPassword;
+            };
+        }]);
+    </script>
+    <script>
+        app.controller('FoodOrderController', function($scope) {
+            $scope.orderDetails = {
+                name: '',
+                phone: '',
+                email: '',
+                orderType: '',
+                addressType: '',
+                address: '',
+                city: '',
+                pickupTime: '',
+                paymentMethod: '',
+                cardNumber: '',
+                expiryDate: '',
+                cvv: '',
+                upiId: ''
+            };
+        
+            $scope.order = [];
+        
+            // Function to calculate the total price
+            $scope.getTotal = function() {
+                let total = 0;
+                angular.forEach($scope.order, function(item) {
+                    total += item.price * item.quantity;
+                });
+                return total;
+            };
+        
+            // Function to submit the order
+            $scope.submitOrder = function(isValid) {
+                if (isValid) {
+                    // Submit order logic
+                    alert('Order submitted successfully!');
+                } else {
+                    alert('Please fill  in all required fields.');
+        }
+    };
+
+    // Remove an item from the order
+    $scope.removeItem = function(index) {
+        $scope.order.splice(index, 1);
+    };
+});
+    </script>
+    <script>
+        app.controller('ReservationController', function($scope) {
+    $scope.reservation = {
+        name: '',
+        phone: '',
+        date: '',
+        time: '',
+        guests: '',
+        banquetHall: false,
+        banquetGuests: '',
+        eventType: '',
+        preOrder: false
+    };
+
+    $scope.order = []; // Order items array
+
+    // Function to calculate total price for pre-order
+    $scope.getTotal = function() {
+        let total = 0;
+        angular.forEach($scope.order, function(item) {
+            total += item.price * item.quantity;
+        });
+        return total;
+    };
+
+    // Function to remove an item from the order
+    $scope.removeItem = function(index) {
+        $scope.order.splice(index, 1);
+    };
+
+    // Function to handle form submission
+    $scope.submitReservation = function(isValid) {
+        if (isValid) {
+            // Submit reservation logic
+            alert('Reservation submitted successfully!');
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    };
+});
+    </script>
+</body>
+</html>
